@@ -6,15 +6,13 @@ function App() {
   const [num2, setNum2] = useState("");
   const [result, setResult] = useState("");
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
 
   const numOneHandler = (ev) => {
     setNum1(ev.target.value);
-    // console.log(ev.target.value);
   };
   const numTwoHandler = (ev) => {
     setNum2(ev.target.value);
-    // console.log(ev.target.value);
   };
 
   const clearingFields = () => {
@@ -23,8 +21,13 @@ function App() {
   };
 
   const addOperatorHandler = () => {
-    if (num1 === "" || num2 === "") {
-      setError(true);
+    if (num1 === "") {
+      setError("Num1 cannot be empty!");
+      setSuccess(false);
+      return;
+    }
+    if (num2 === "") {
+      setError("Num2 cannot be empty!");
       setSuccess(false);
       return;
     }
@@ -35,8 +38,13 @@ function App() {
     clearingFields();
   };
   const subOperatorHandler = () => {
-    if (num1 === "" || num2 === "") {
-      setError(true);
+    if (num1 === "") {
+      setError("Num1 cannot be empty!");
+      setSuccess(false);
+      return;
+    }
+    if (num2 === "") {
+      setError("Num2 cannot be empty!");
       setSuccess(false);
       return;
     }
@@ -46,8 +54,13 @@ function App() {
     clearingFields();
   };
   const multiplyOperatorHandler = () => {
-    if (num1 === "" || num2 === "") {
-      setError(true);
+    if (num1 === "") {
+      setError("Num1 cannot be empty!");
+      setSuccess(false);
+      return;
+    }
+    if (num2 === "") {
+      setError("Num2 cannot be empty!");
       setSuccess(false);
       return;
     }
@@ -57,8 +70,13 @@ function App() {
     clearingFields();
   };
   const divOperatorHandler = () => {
-    if (num1 === "" || num2 === "") {
-      setError(true);
+    if (num1 === "") {
+      setError("Num1 cannot be empty!");
+      setSuccess(false);
+      return;
+    }
+    if (num2 === "") {
+      setError("Num2 cannot be empty!");
       setSuccess(false);
       return;
     }
@@ -100,11 +118,12 @@ function App() {
             /
           </button>
         </div>
-        <div>
-          {success && "Success"}
-          {error && "Error"}
-        </div>
-        Result: {result}
+        
+          {success && <div className="success">Success</div>}
+          {error && <div className="error">Error: {error}</div>}
+
+        <div className="result">Result: {result}</div>
+        
       </div>
     </div>
   );

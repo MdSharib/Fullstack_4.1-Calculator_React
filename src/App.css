@@ -47,3 +47,19 @@
     border: none;
     cursor: pointer;
 }
+
+.success{
+    color: green;
+    font-size: 20px;
+    font-weight: 700;
+}
+.error{
+    color: red;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.result{
+    font-size: 20px;
+    font-weight: 700;
+}
