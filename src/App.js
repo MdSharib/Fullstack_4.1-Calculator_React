@@ -118,7 +118,7 @@ function App() {
             /
           </button>
         </div>
-        
+          {!success && !error && <div className="result">Enter values</div>}
           {success && <div className="success">Success</div>}
           {error && <div className="error">Error: {error}</div>}
 
