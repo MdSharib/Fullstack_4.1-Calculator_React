@@ -18,16 +18,19 @@ function App() {
   const clearingFields = () => {
     setNum1("");
     setNum2("");
+    
   };
 
   const addOperatorHandler = () => {
     if (num1 === "") {
       setError("Num1 cannot be empty!");
+      setResult("");
       setSuccess(false);
       return;
     }
     if (num2 === "") {
       setError("Num2 cannot be empty!");
+      setResult("");
       setSuccess(false);
       return;
     }
@@ -40,11 +43,13 @@ function App() {
   const subOperatorHandler = () => {
     if (num1 === "") {
       setError("Num1 cannot be empty!");
+      setResult("");
       setSuccess(false);
       return;
     }
     if (num2 === "") {
       setError("Num2 cannot be empty!");
+      setResult("");
       setSuccess(false);
       return;
     }
@@ -56,11 +61,13 @@ function App() {
   const multiplyOperatorHandler = () => {
     if (num1 === "") {
       setError("Num1 cannot be empty!");
+      setResult("");
       setSuccess(false);
       return;
     }
     if (num2 === "") {
       setError("Num2 cannot be empty!");
+      setResult("");
       setSuccess(false);
       return;
     }
@@ -72,11 +79,13 @@ function App() {
   const divOperatorHandler = () => {
     if (num1 === "") {
       setError("Num1 cannot be empty!");
+      setResult("");
       setSuccess(false);
       return;
     }
     if (num2 === "") {
       setError("Num2 cannot be empty!");
+      setResult("");
       setSuccess(false);
       return;
     }
