@@ -1,0 +1,49 @@
+
+.App{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.inner-app{
+    width: 32%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+.heading{
+    font-size: 40px;
+    margin: 0px;
+}
+
+
+.input-text{
+    width: 70%;
+    height: 30px;
+
+}
+
+.operator-div{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.operator{
+    width: 22%;
+    margin: 0px 6px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+}
