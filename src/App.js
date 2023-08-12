@@ -18,7 +18,6 @@ function App() {
   const clearingFields = () => {
     setNum1("");
     setNum2("");
-    
   };
 
   const addOperatorHandler = () => {
@@ -127,12 +126,11 @@ function App() {
             /
           </button>
         </div>
-          {!success && !error && <div className="result">Enter values</div>}
-          {success && <div className="success">Success</div>}
-          {error && <div className="error">Error: {error}</div>}
+        {!success && !error && <div className="result">Enter values</div>}
+        {success && <div className="success">Success</div>}
+        {error && <div className="error">Error: {error}</div>}
 
         <div className="result">Result: {result}</div>
-        
       </div>
     </div>
   );
