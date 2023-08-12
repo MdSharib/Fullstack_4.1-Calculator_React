@@ -50,7 +50,7 @@ function App() {
 
     const numberOne = +num1;
     const numberTwo = +num2;
-    if (!numberOne || !numberTwo) {
+    if ((!numberOne || !numberTwo) && numberOne !== 0 && numberTwo !== 0) {
       setError("Please enter valid number.");
       setSuccess(false);
       return;
@@ -73,7 +73,7 @@ function App() {
 
     const numberOne = +num1;
     const numberTwo = +num2;
-    if (!numberOne || !numberTwo) {
+    if ((!numberOne || !numberTwo) && numberOne !== 0 && numberTwo !== 0) {
       setError("Please enter valid number.");
       setSuccess(false);
       return;
@@ -96,11 +96,12 @@ function App() {
 
     const numberOne = +num1;
     const numberTwo = +num2;
-    if (!numberOne || !numberTwo) {
+    if ((!numberOne || !numberTwo) && numberOne !== 0 && numberTwo !== 0) {
       setError("Please enter valid number.");
       setSuccess(false);
       return;
     }
+
     operationHandler("*", numberOne, numberTwo);
   };
 
@@ -118,11 +119,12 @@ function App() {
 
     const numberOne = +num1;
     const numberTwo = +num2;
-    if (!numberOne || !numberTwo) {
+    if ((!numberOne || !numberTwo) && numberOne !== 0 && numberTwo !== 0) {
       setError("Please enter valid number.");
       setSuccess(false);
       return;
     }
+
     operationHandler("/", numberOne, numberTwo);
   };
 
