@@ -129,7 +129,7 @@ function App() {
   return (
     <div className="App">
       <div className="inner-app">
-        <h1 className="heading">React Calculator</h1>
+        <h1 className="heading">React Calculator.</h1>
         <input
           type="text"
           value={num1}
