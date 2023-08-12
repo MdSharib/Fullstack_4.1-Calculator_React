@@ -15,83 +15,136 @@ function App() {
     setNum2(ev.target.value);
   };
 
+  // to display error at validation
+  const displayError = (str) => {
+    setError(`${str} cannot be empty!`);
+    setResult("");
+    setSuccess(false);
+  };
+
+  // handle operation
+  const operationHandler = (operator, num1, num2) => {
+    if (operator === "/") {
+      setError(false);
+      setSuccess(true);
+      let res = eval(`${num1} ${operator} ${num2}`).toFixed(2);
+      setResult(res);
+      clearingFields();
+      return;
+    }
+
+    setError(false);
+    setSuccess(true);
+    let res = eval(`${num1} ${operator} ${num2}`);
+    setResult(res);
+    clearingFields();
+  };
+
   const clearingFields = () => {
     setNum1("");
     setNum2("");
   };
 
+  // addition
   const addOperatorHandler = () => {
-    if (num1 === "") {
-      setError("Num1 cannot be empty!");
-      setResult("");
-      setSuccess(false);
+    if (num1.trim() === "") {
+      displayError("Num1");
       return;
     }
-    if (num2 === "") {
-      setError("Num2 cannot be empty!");
-      setResult("");
-      setSuccess(false);
-      return;
-    }
-    setError(false);
-    setSuccess(true);
 
-    setResult(+num1 + +num2);
-    clearingFields();
+    if (num2.trim() === "") {
+      displayError("Num2");
+      return;
+    }
+
+    const numberOne = +num1;
+    const numberTwo = +num2;
+    if (!numberOne || !numberTwo) {
+      setError("Please enter valid number.");
+      return;
+    }
+
+    operationHandler("+", numberOne, numberTwo);
+    // setError(false);
+    // setSuccess(true);
+    // setResult(numberOne + +num2);
+    // clearingFields();
   };
+
+  // subtraction
   const subOperatorHandler = () => {
-    if (num1 === "") {
-      setError("Num1 cannot be empty!");
-      setResult("");
-      setSuccess(false);
+    if (num1.trim() === "") {
+      displayError("Num1");
       return;
     }
-    if (num2 === "") {
-      setError("Num2 cannot be empty!");
-      setResult("");
-      setSuccess(false);
+
+    if (num2.trim() === "") {
+      displayError("Num2");
       return;
     }
-    setError(false);
-    setSuccess(true);
-    setResult(+num1 - +num2);
-    clearingFields();
+
+    const numberOne = +num1;
+    const numberTwo = +num2;
+    if (!numberOne || !numberTwo) {
+      setError("Please enter valid number.");
+      return;
+    }
+
+    operationHandler("-", numberOne, numberTwo);
+    // setError(false);
+    // setSuccess(true);
+    // setResult(+num1 - +num2);
+    // clearingFields();
   };
+
+  // multiplication
   const multiplyOperatorHandler = () => {
-    if (num1 === "") {
-      setError("Num1 cannot be empty!");
-      setResult("");
-      setSuccess(false);
+    if (num1.trim() === "") {
+      displayError("Num1");
       return;
     }
-    if (num2 === "") {
-      setError("Num2 cannot be empty!");
-      setResult("");
-      setSuccess(false);
+
+    if (num2.trim() === "") {
+      displayError("Num2");
       return;
     }
-    setError(false);
-    setSuccess(true);
-    setResult(+num1 * +num2);
-    clearingFields();
+
+    const numberOne = +num1;
+    const numberTwo = +num2;
+    if (!numberOne || !numberTwo) {
+      setError("Please enter valid number.");
+      return;
+    }
+    operationHandler("*", numberOne, numberTwo);
+    // setError(false);
+    // setSuccess(true);
+    // setResult(+num1 * +num2);
+    // clearingFields();
   };
+
+  // division
   const divOperatorHandler = () => {
-    if (num1 === "") {
-      setError("Num1 cannot be empty!");
-      setResult("");
-      setSuccess(false);
+    if (num1.trim() === "") {
+      displayError("Num1");
       return;
     }
-    if (num2 === "") {
-      setError("Num2 cannot be empty!");
-      setResult("");
-      setSuccess(false);
+
+    if (num2.trim() === "") {
+      displayError("Num2");
       return;
     }
-    setError(false);
-    setSuccess(true);
-    setResult(+num1 / +num2);
-    clearingFields();
+
+    const numberOne = +num1;
+    const numberTwo = +num2;
+    if (!numberOne || !numberTwo) {
+      setError("Please enter valid number.");
+      return;
+    }
+    operationHandler("/", numberOne, numberTwo);
+    // setError(false);
+    // setSuccess(true);
+    // setResult((+num1 / +num2).toFixed(2));
+    // clearingFields();
   };
 
   return (
@@ -130,7 +183,9 @@ function App() {
         {success && <div className="success">Success</div>}
         {error && <div className="error">Error: {error}</div>}
 
-        <div className="result">Result: {result}</div>
+        <div className="result">
+          Result: <span>{result}</span>
+        </div>
       </div>
     </div>
   );

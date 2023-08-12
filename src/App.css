@@ -84,7 +84,7 @@
 }
 
 .success {
-  color: blue;
+  color: green;
   font-size: 20px;
   font-weight: 700;
 }
@@ -97,4 +97,7 @@
 .result {
   font-size: 20px;
   font-weight: 700;
+}
+.result span {
+  color: blue;
 }
