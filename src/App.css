@@ -81,6 +81,13 @@
   font-size: 25px;
   border: none;
   cursor: pointer;
+  font-weight: 900;
+}
+.operator:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  transition: 0.3s;
 }
 
 .success {

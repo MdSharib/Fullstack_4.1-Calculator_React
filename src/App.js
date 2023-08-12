@@ -24,18 +24,9 @@ function App() {
 
   // handle operation
   const operationHandler = (operator, num1, num2) => {
-    if (operator === "/") {
-      setError(false);
-      setSuccess(true);
-      let res = eval(`${num1} ${operator} ${num2}`).toFixed(2);
-      setResult(res);
-      clearingFields();
-      return;
-    }
-
     setError(false);
     setSuccess(true);
-    let res = eval(`${num1} ${operator} ${num2}`);
+    let res = eval(`${num1} ${operator} ${num2}`).toFixed(2);
     setResult(res);
     clearingFields();
   };
@@ -61,14 +52,11 @@ function App() {
     const numberTwo = +num2;
     if (!numberOne || !numberTwo) {
       setError("Please enter valid number.");
+      setSuccess(false);
       return;
     }
 
     operationHandler("+", numberOne, numberTwo);
-    // setError(false);
-    // setSuccess(true);
-    // setResult(numberOne + +num2);
-    // clearingFields();
   };
 
   // subtraction
@@ -87,14 +75,11 @@ function App() {
     const numberTwo = +num2;
     if (!numberOne || !numberTwo) {
       setError("Please enter valid number.");
+      setSuccess(false);
       return;
     }
 
     operationHandler("-", numberOne, numberTwo);
-    // setError(false);
-    // setSuccess(true);
-    // setResult(+num1 - +num2);
-    // clearingFields();
   };
 
   // multiplication
@@ -113,13 +98,10 @@ function App() {
     const numberTwo = +num2;
     if (!numberOne || !numberTwo) {
       setError("Please enter valid number.");
+      setSuccess(false);
       return;
     }
     operationHandler("*", numberOne, numberTwo);
-    // setError(false);
-    // setSuccess(true);
-    // setResult(+num1 * +num2);
-    // clearingFields();
   };
 
   // division
@@ -138,13 +120,10 @@ function App() {
     const numberTwo = +num2;
     if (!numberOne || !numberTwo) {
       setError("Please enter valid number.");
+      setSuccess(false);
       return;
     }
     operationHandler("/", numberOne, numberTwo);
-    // setError(false);
-    // setSuccess(true);
-    // setResult((+num1 / +num2).toFixed(2));
-    // clearingFields();
   };
 
   return (
